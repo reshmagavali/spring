@@ -26,4 +26,10 @@ public class EmployeeController {
     {
         return  ResponseEntity.ok(employeeService.findById(empId));
     }
+
+    @GetMapping("/findbyname/{empName}")
+    public ResponseEntity<Optional<Employee>> findByName(@PathVariable String empName)
+    {
+        return  ResponseEntity.ok(employeeService.findByName(empName));
+    }
 }
